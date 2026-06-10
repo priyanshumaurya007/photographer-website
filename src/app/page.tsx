@@ -1,65 +1,216 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Star, Award, Users, Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { AnimatedSection } from "@/components/ui/animated-section";
+import { PortfolioCard } from "@/components/ui/portfolio-card";
+
+const stats = [
+  { label: "Photoshoots Completed", value: "500+", icon: Award },
+  { label: "Years Experience", value: "8+", icon: Star },
+  { label: "Happy Clients", value: "250+", icon: Users },
+  { label: "Destination Weddings", value: "50+", icon: Globe },
+];
+
+const featuredWork = [
+  { title: "Royal Udaipur Wedding", category: "Wedding", imageUrl: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop" },
+  { title: "Mountain Engagement", category: "Pre-Wedding", imageUrl: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop" },
+  { title: "Vogue Elegance", category: "Fashion", imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop" },
+  { title: "Corporate Gala", category: "Events", imageUrl: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto=format&fit=crop" },
+  { title: "Golden Hour Maternity", category: "Maternity", imageUrl: "https://images.unsplash.com/photo-1628190772274-124b130e6cc4?q=80&w=2070&auto=format&fit=crop" },
+  { title: "Newborn Innocence", category: "Newborn", imageUrl: "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=2070&auto=format&fit=crop" },
+  { title: "Bali Destination", category: "Travel", imageUrl: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2038&auto=format&fit=crop" },
+  { title: "Tech Summit 2023", category: "Corporate", imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" },
+];
+
+const reasons = [
+  { title: "Creative Storytelling", description: "We don't just take pictures; we capture the emotion, the unscripted moments, and the true essence of your story." },
+  { title: "High-End Editing", description: "Every image is meticulously retouched to ensure a cinematic, magazine-quality finish that stands the test of time." },
+  { title: "Personalized Experience", description: "From the first consultation to the final album delivery, we offer a tailored, stress-free experience." },
+  { title: "Fast Delivery", description: "We understand your excitement. Get a sneak peek within 48 hours and your full gallery in record time." },
+];
+
+const testimonials = [
+  { name: "Priya & Rahul", text: "The photos exceeded every expectation. Every moment felt beautifully captured. Aarav made us feel so comfortable, and the results are simply magical.", role: "Wedding Clients" },
+  { name: "Sarah Jenkins", text: "LensCraft Studios brought our corporate vision to life. Professional, punctual, and incredibly talented. Highly recommended for any commercial work.", role: "Marketing Director" },
+  { name: "Amit & Neha", text: "Looking at our maternity photos brings tears to my eyes. They perfectly captured the anticipation and love. Thank you for these memories.", role: "Maternity Clients" },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070&auto=format&fit=crop"
+          alt="Cinematic Wedding Photography"
+          fill
           priority
+          className="object-cover scale-105 animate-[kenburns_20s_ease-in-out_infinite_alternate]"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+        
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20">
+          <AnimatedSection>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight drop-shadow-lg">
+              Capturing Moments <br />
+              <span className="text-gold italic font-light">That Last Forever</span>
+            </h1>
+          </AnimatedSection>
+          <AnimatedSection delay={0.2}>
+            <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-light tracking-wide drop-shadow-md">
+              Wedding, lifestyle, and commercial photography crafted with creativity, emotion, and elegance.
+            </p>
+          </AnimatedSection>
+          <AnimatedSection delay={0.4} className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/portfolio">
+              <Button size="lg" className="w-full sm:w-auto text-lg">View Portfolio</Button>
+            </Link>
+            <Link href="/contact">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg text-white border-white hover:bg-white hover:text-black">
+                Book a Session
+              </Button>
+            </Link>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Trust Section */}
+      <section className="py-20 bg-background border-b border-warm-gray-dark/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <AnimatedSection key={index} delay={index * 0.1} className="text-center">
+                <div className="flex justify-center mb-4">
+                  <stat.icon className="w-8 h-8 text-gold" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-2">{stat.value}</h3>
+                <p className="text-sm md:text-base text-foreground/60 uppercase tracking-widest">{stat.label}</p>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Work */}
+      <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="text-sm text-gold font-semibold tracking-widest uppercase mb-3">Portfolio</h2>
+            <h3 className="text-4xl md:text-5xl font-heading font-bold text-foreground">Featured Work</h3>
+          </AnimatedSection>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredWork.map((work, index) => (
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <PortfolioCard {...work} />
+              </AnimatedSection>
+            ))}
+          </div>
+          
+          <AnimatedSection delay={0.4} className="text-center mt-12">
+            <Link href="/portfolio">
+              <Button variant="outline" size="lg" className="group">
+                View All Projects <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-24 bg-warm-gray-dark/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row gap-16 items-center">
+            <div className="w-full md:w-1/2">
+              <AnimatedSection>
+                <h2 className="text-sm text-gold font-semibold tracking-widest uppercase mb-3">The LensCraft Difference</h2>
+                <h3 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-8">Why Choose Us</h3>
+                <div className="space-y-8">
+                  {reasons.map((reason, index) => (
+                    <div key={index} className="flex gap-4">
+                      <div className="w-12 h-12 shrink-0 rounded-full bg-gold/10 flex items-center justify-center border border-gold/20">
+                        <span className="text-gold font-heading font-bold">{index + 1}</span>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-heading font-semibold text-foreground mb-2">{reason.title}</h4>
+                        <p className="text-foreground/70 leading-relaxed">{reason.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+            <div className="w-full md:w-1/2 relative">
+              <AnimatedSection delay={0.2}>
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?q=80&w=1974&auto=format&fit=crop"
+                    alt="Photographer behind the scenes"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 border-2 border-gold/50 rounded-2xl m-4 z-10 pointer-events-none mix-blend-overlay" />
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="text-sm text-gold font-semibold tracking-widest uppercase mb-3">Kind Words</h2>
+            <h3 className="text-4xl md:text-5xl font-heading font-bold text-foreground">Client Testimonials</h3>
+          </AnimatedSection>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <AnimatedSection key={index} delay={index * 0.2}>
+                <div className="bg-warm-gray-dark/5 p-8 rounded-2xl h-full flex flex-col border border-warm-gray-dark/10 hover:border-gold/30 transition-colors">
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-gold fill-gold" />
+                    ))}
+                  </div>
+                  <p className="text-foreground/80 italic mb-8 flex-1 leading-relaxed">
+                    "{testimonial.text}"
+                  </p>
+                  <div>
+                    <h4 className="font-heading font-bold text-lg text-foreground">{testimonial.name}</h4>
+                    <p className="text-sm text-gold">{testimonial.role}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Booking CTA */}
+      <section className="py-32 relative overflow-hidden flex items-center justify-center">
+        <Image
+          src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=2070&auto=format&fit=crop"
+          alt="Book a shoot"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+        
+        <AnimatedSection className="relative z-10 text-center px-4 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
+            Let's Create Something Beautiful Together
+          </h2>
+          <p className="text-lg text-white/80 mb-10 font-light">
+            Ready to capture your memories? Reach out to check availability and discuss your vision.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+          <Link href="/contact">
+            <Button size="lg" className="text-lg px-12 py-6 h-auto">Book Your Shoot</Button>
+          </Link>
+        </AnimatedSection>
+      </section>
     </div>
   );
 }
