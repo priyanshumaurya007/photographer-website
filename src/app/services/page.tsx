@@ -24,7 +24,7 @@ const services = [
     description: "Preserve the miracle of life. Gentle, comfortable, and beautifully styled sessions for expecting mothers and newborns.",
     price: "Starting at ₹35,000",
     deliverables: "50+ Edited Photos, 3 Outfit Changes, Prop Setup",
-    image: "https://images.unsplash.com/photo-1628190772274-124b130e6cc4?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1493894473891-10fc1e5dbd22?q=80&w=2070&auto=format&fit=crop"
   },
   {
     title: "Corporate & Events",
