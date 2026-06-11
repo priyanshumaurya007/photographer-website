@@ -90,7 +90,8 @@ export default function About() {
               </div>
               
               <div className="mt-10">
-                <Image src="/signature.png" alt="Signature" width={150} height={60} className="dark:invert opacity-70 mb-4" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/signature.svg" alt="Aarav Sharma Signature" width={150} height={60} className="dark:invert opacity-70 mb-4" />
               </div>
             </AnimatedSection>
           </div>
