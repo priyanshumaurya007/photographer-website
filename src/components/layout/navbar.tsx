@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Camera } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -37,7 +37,14 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <Camera className="w-8 h-8 text-gold transition-transform group-hover:scale-110" />
+          <img
+            src="/camera-logo.svg"
+            alt="LensCraft logo"
+            width={36}
+            height={36}
+            className="transition-transform group-hover:scale-110"
+            style={{ filter: "invert(74%) sepia(45%) saturate(600%) hue-rotate(5deg) brightness(105%) contrast(95%)" }}
+          />
           <span className="font-heading text-2xl font-bold tracking-wider text-foreground">
             LensCraft
           </span>

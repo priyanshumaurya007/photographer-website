@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Camera, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
   return (
@@ -8,7 +8,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4 group inline-flex">
-              <Camera className="w-8 h-8 text-gold transition-transform group-hover:scale-110" />
+              <img
+                src="/camera-logo.svg"
+                alt="LensCraft logo"
+                width={36}
+                height={36}
+                className="transition-transform group-hover:scale-110"
+                style={{ filter: "invert(74%) sepia(45%) saturate(600%) hue-rotate(5deg) brightness(105%) contrast(95%)" }}
+              />
               <span className="font-heading text-2xl font-bold tracking-wider text-foreground">
                 LensCraft
               </span>
