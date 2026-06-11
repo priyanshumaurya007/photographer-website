@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Clock, Mail, MapPin, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/ui/animated-section";
+import { AvailabilityCalendar } from "@/components/ui/availability-calendar";
 
 const faqs = [
   {
@@ -187,22 +188,24 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Map & Instagram */}
+        {/* Availability Calendar + Instagram */}
         <AnimatedSection delay={0.4}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="rounded-2xl overflow-hidden border border-warm-gray-dark/10 bg-warm-gray-dark/5 p-4 flex flex-col items-center justify-center min-h-[300px]">
-              <MapPin className="w-12 h-12 text-gold mb-4" />
-              <h3 className="font-heading font-bold text-2xl mb-2 text-foreground">Find Us on Maps</h3>
-              <p className="text-foreground/70 text-center max-w-xs mb-6">Interactive Google Maps integration goes here.</p>
-              <Button variant="outline">Open in Google Maps</Button>
-            </div>
+            <AvailabilityCalendar />
             
-            <div className="rounded-2xl overflow-hidden border border-warm-gray-dark/10 bg-warm-gray-dark/5 p-4 flex flex-col items-center justify-center min-h-[300px]">
-              <div className="w-12 h-12 flex items-center justify-center font-bold text-xl border-2 border-gold text-gold rounded-xl mb-4">IG</div>
+            <div className="rounded-2xl overflow-hidden border border-warm-gray-dark/10 bg-warm-gray-dark/5 p-8 flex flex-col items-center justify-center min-h-[300px]">
+              <div className="w-14 h-14 flex items-center justify-center font-bold text-lg border-2 border-gold text-gold rounded-2xl mb-5 bg-gold/5">
+                IG
+              </div>
               <h3 className="font-heading font-bold text-2xl mb-2 text-foreground">Follow Our Journey</h3>
-              <p className="text-foreground/70 text-center max-w-xs mb-6">Live Instagram Feed integration goes here.</p>
+              <p className="text-foreground/60 text-center max-w-xs mb-2 text-sm">
+                Behind-the-scenes, sneak peeks, and daily inspiration — all on our feed.
+              </p>
+              <p className="text-gold font-semibold mb-6 text-sm">12.4K Followers</p>
               <a href="https://instagram.com" target="_blank" rel="noreferrer">
-                <Button variant="outline">@lenscraftstudios</Button>
+                <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-black">
+                  @lenscraftstudios
+                </Button>
               </a>
             </div>
           </div>
